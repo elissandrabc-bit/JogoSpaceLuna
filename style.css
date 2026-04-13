@@ -14,6 +14,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ======================================== */
@@ -86,6 +87,7 @@ header {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
 }
 
 .header-container {
@@ -194,6 +196,7 @@ main {
     animation: fadeInUp 0.8s ease-out;
     position: relative;
     z-index: 1;
+    transition: all 0.3s ease;
 }
 
 /* ======================================== */
@@ -428,6 +431,7 @@ footer {
     font-size: 0.75rem;
     position: relative;
     z-index: 1;
+    transition: background 0.3s ease;
 }
 
 /* ======================================== */
@@ -448,6 +452,258 @@ footer {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #0a1a3a, #0a0f2a
+    background: linear-gradient(135deg, #0a1a3a, #0a0f2a);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    border: 2px solid #ff66cc;
+    box-shadow: 0 0 40px rgba(255, 102, 204, 0.3);
+    animation: fadeInUp 0.5s ease-out;
+}
 
+.modal-content h2 {
+    color: #ff99cc;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.campo-modal {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.campo-modal label {
+    display: block;
+    color: #ff99cc;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.campo-modal input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.campo-modal input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ff66cc;
+}
+
+.campo-modal input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-verificar {
+    background: linear-gradient(135deg, #ff66cc, #ff3399);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-verificar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.6);
+}
+
+.aviso-modal {
+    font-size: 0.8rem;
+    color: #ff99cc;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* ======================================== */
+/* TEMA CLARO - COMPLETO */
+/* ======================================== */
+body.tema-claro {
+    background: #f0f4ff;
+    color: #1a1a2e;
+}
+
+body.tema-claro header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 2px solid #ff66cc;
+}
+
+body.tema-claro header h1 {
+    color: #ff3399;
+}
+
+body.tema-claro .btn-tema {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.tema-claro nav a {
+    color: #1a1a2e;
+}
+
+body.tema-claro nav a:hover {
+    background: #ff66cc;
+    color: white;
+}
+
+body.tema-claro nav a.ativo {
+    background: #ff66cc;
+    color: white;
+}
+
+body.tema-claro .home-texto h2,
+body.tema-claro .historia h2,
+body.tema-claro .curiosidades h2,
+body.tema-claro .servicos h2,
+body.tema-claro .jogo-card h3 {
+    color: #ff3399;
+}
+
+body.tema-claro .home-texto p,
+body.tema-claro .home-texto li {
+    color: #1a1a2e;
+}
+
+body.tema-claro .home-texto li {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+body.tema-claro .campo-imagem,
+body.tema-claro .campo-texto,
+body.tema-claro .planeta,
+body.tema-claro .servicos ul,
+body.tema-claro .formacao,
+body.tema-claro .jogo-card {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: #ff66cc;
+}
+
+body.tema-claro .planeta p,
+body.tema-claro .servicos li,
+body.tema-claro .formacao p {
+    color: #1a1a2e;
+}
+
+body.tema-claro .servicos li {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+body.tema-claro footer {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+}
+
+body.tema-claro .modal-content {
+    background: linear-gradient(135deg, #e0e8ff, #f0f4ff);
+    border: 2px solid #ff66cc;
+}
+
+body.tema-claro .modal-content p,
+body.tema-claro .modal-content h2,
+body.tema-claro .campo-modal label {
+    color: #1a1a2e;
+}
+
+body.tema-claro .campo-modal input {
+    background: rgba(0, 0, 0, 0.1);
+    color: #1a1a2e;
+}
+
+body.tema-claro .campo-modal input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+body.tema-claro .aviso-modal {
+    color: #ff3399;
+}
+
+/* ======================================== */
+/* RESPONSIVIDADE */
+/* ======================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
     
+    .btn-tema {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .logo-titulo {
+        width: 100%;
+        text-align: center;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    nav a {
+        margin: 0 5px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .home-container {
+        flex-direction: column;
+    }
+    
+    .jogo-iframe-container {
+        height: 350px;
+    }
+    
+    .home-texto h2 {
+        font-size: 1.4rem;
+    }
+    
+    .modal-content {
+        padding: 25px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .jogo-iframe-container {
+        height: 280px;
+    }
+    
+    .home-texto h2 {
+        font-size: 1.2rem;
+    }
+    
+    .home-texto p, .home-texto li {
+        font-size: 0.85rem;
+    }
+    
+    .planeta h3 {
+        font-size: 1.1rem;
+    }
+    
+    .planeta p {
+        font-size: 0.85rem;
+    }
+}
