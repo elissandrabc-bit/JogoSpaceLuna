@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SPACE LUNA - Curiosidades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-titulo">
+                <h1>🌙 SPACE LUNA</h1>
+            </div>
+            <button id="btn-tema" class="btn-tema" aria-label="Mudar tema">
+                🌞
+            </button>
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="historia.html">HISTÓRIA</a>
+            <a href="curiosidades.html" class="ativo">CURIOSIDADES</a>
+            <a href="servicos.html">SERVIÇOS</a>
+        </nav>
+    </header>
+
+    <main class="curiosidades">
+        <h2>🪐 Curiosidades do Sistema Solar</h2>
+        <div class="planetas">
+            <div class="planeta">
+                <h3>☀️ Sol</h3>
+                <p>Responde por 99,86% da massa do Sistema Solar! Sua temperatura na superfície é de cerca de 5.500°C.</p>
+            </div>
+            <div class="planeta">
+                <h3>🪨 Mercúrio</h3>
+                <p>O planeta mais rápido e com a maior variação de temperatura: de -173°C a 427°C.</p>
+            </div>
+            <div class="planeta">
+                <h3>💨 Vênus</h3>
+                <p>Gira ao contrário dos outros planetas e é o mais quente, com 462°C!</p>
+            </div>
+            <div class="planeta">
+                <h3>🌍 Terra</h3>
+                <p>Único planeta conhecido com vida e água em estado líquido na superfície.</p>
+            </div>
+            <div class="planeta">
+                <h3>🔴 Marte</h3>
+                <p>Possui o maior vulcão do Sistema Solar: Olympus Mons, com 21km de altura!</p>
+            </div>
+            <div class="planeta">
+                <h3>🪐 Júpiter</h3>
+                <p>Maior planeta, com uma Grande Mancha Vermelha (tempestade gigante que dura há séculos).</p>
+            </div>
+            <div class="planeta">
+                <h3>💍 Saturno</h3>
+                <p>Famoso por seus anéis feitos de gelo e rocha, que se estendem por até 282.000 km.</p>
+            </div>
+            <div class="planeta">
+                <h3>🌀 Urano</h3>
+                <p>Gira "deitado", com inclinação de 98 graus. Seus anéis são verticais!</p>
+            </div>
+            <div class="planeta">
+                <h3>🌊 Netuno</h3>
+                <p>Ventos mais fortes do Sistema Solar, acima de 2.000 km/h. É o planeta mais frio.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SPACE LUNA - Explorando o universo com você 💫</p>
+    </footer>
+
+    <div class="stars" id="stars"></div>
+
+    <script>
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            if (!starsContainer) return;
+            const numStars = 150;
+            starsContainer.innerHTML = '';
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const duration = Math.random() * 3 + 2;
+                star.style.animationDuration = duration + 's';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        const btnTema = document.getElementById('btn-tema');
+        const body = document.body;
+        const temaSalvo = localStorage.getItem('temaSpaceLuna');
+        if (temaSalvo === 'claro') {
+            body.classList.add('tema-claro');
+            btnTema.textContent = '🌙';
+        } else {
+            btnTema.textContent = '🌞';
+        }
+        btnTema.addEventListener('click', () => {
+            body.classList.toggle('tema-claro');
+            if (body.classList.contains('tema-claro')) {
+                localStorage.setItem('temaSpaceLuna', 'claro');
+                btnTema.textContent = '🌙';
+            } else {
+                localStorage.setItem('temaSpaceLuna', 'escuro');
+                btnTema.textContent = '🌞';
+            }
+        });
+    </script>
+</body>
+</html>

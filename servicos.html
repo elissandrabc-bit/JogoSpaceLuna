@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SPACE LUNA - Serviços</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-titulo">
+                <h1>🌙 SPACE LUNA</h1>
+            </div>
+            <button id="btn-tema" class="btn-tema" aria-label="Mudar tema">
+                🌞
+            </button>
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="historia.html">HISTÓRIA</a>
+            <a href="curiosidades.html">CURIOSIDADES</a>
+            <a href="servicos.html" class="ativo">SERVIÇOS</a>
+        </nav>
+    </header>
+
+    <main class="servicos">
+        <h2>✨ Serviços</h2>
+        <p>O jogo SPACE LUNA oferece uma experiência educativa e divertida, com:</p>
+        <ul>
+            <li>🌌 Missões interativas por cada planeta</li>
+            <li>📚 Conteúdo alinhado ao ensino médio</li>
+            <li>🎮 Design pensado especialmente para meninas</li>
+            <li>🏆 Certificado de conhecimento astronômico</li>
+            <li>⭐ Desafios diários e ranking de pontuação</li>
+        </ul>
+
+        <div class="formacao">
+            <h3>📸 Sobre a criadora</h3>
+            <div class="campo-imagem-formacao">
+                <img src="imagens/minha-foto.jpg" alt="Minha foto" class="foto-autora" onerror="this.src='https://via.placeholder.com/250x250?text=Minha+Foto'">
+                <p><em>Substitua o arquivo "minha-foto.jpg" pela sua imagem.</em></p>
+            </div>
+            <p><strong>Formação:</strong> [Escreva aqui sua formação - exemplo: Estudante de Análise e Desenvolvimento de Sistemas]</p>
+            <p>Este site é um projeto acadêmico desenvolvido para a faculdade, unindo tecnologia, astronomia e empoderamento feminino.</p>
+            <p>📧 Contato: [seu-email@exemplo.com]</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SPACE LUNA - Explorando o universo com você 💫</p>
+    </footer>
+
+    <div class="stars" id="stars"></div>
+
+    <script>
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            if (!starsContainer) return;
+            const numStars = 150;
+            starsContainer.innerHTML = '';
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const duration = Math.random() * 3 + 2;
+                star.style.animationDuration = duration + 's';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        const btnTema = document.getElementById('btn-tema');
+        const body = document.body;
+        const temaSalvo = localStorage.getItem('temaSpaceLuna');
+        if (temaSalvo === 'claro') {
+            body.classList.add('tema-claro');
+            btnTema.textContent = '🌙';
+        } else {
+            btnTema.textContent = '🌞';
+        }
+        btnTema.addEventListener('click', () => {
+            body.classList.toggle('tema-claro');
+            if (body.classList.contains('tema-claro')) {
+                localStorage.setItem('temaSpaceLuna', 'claro');
+                btnTema.textContent = '🌙';
+            } else {
+                localStorage.setItem('temaSpaceLuna', 'escuro');
+                btnTema.textContent = '🌞';
+            }
+        });
+    </script>
+</body>
+</html>

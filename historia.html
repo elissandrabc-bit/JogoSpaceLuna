@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SPACE LUNA - História</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-titulo">
+                <h1>🌙 SPACE LUNA</h1>
+            </div>
+            <button id="btn-tema" class="btn-tema" aria-label="Mudar tema">
+                🌞
+            </button>
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="historia.html" class="ativo">HISTÓRIA</a>
+            <a href="curiosidades.html">CURIOSIDADES</a>
+            <a href="servicos.html">SERVIÇOS</a>
+        </nav>
+    </header>
+
+    <main class="historia">
+        <h2>📖 A História de Luna</h2>
+        
+        <div class="campo-imagem">
+            <p><strong>🔹 Personagem principal Luna:</strong></p>
+            <img src="imagens/luna-personagem.jpg" alt="Personagem Luna" class="personagem" onerror="this.src='https://via.placeholder.com/300x300?text=Luna'">
+            <p><em>Substitua a imagem "luna-personagem.jpg" na pasta "imagens" pela sua imagem.</em></p>
+        </div>
+
+        <div class="campo-texto">
+            <p><strong>🔹 A História:</strong></p>
+            <p>
+                Luna é uma jovem estudante do ensino médio que sempre sonhou em viajar pelo espaço. 
+                Um dia, ao mexer em um antigo telescópio da avó, ela é transportada para uma dimensão 
+                onde os planetas do Sistema Solar ganham vida! Agora, Luna precisa completar missões 
+                científicas para restaurar o equilíbrio do cosmos e voltar para casa.
+            </p>
+            <p>
+                No jogo, você acompanha Luna em sua jornada, aprendendo sobre cada planeta, 
+                enfrentando desafios astronômicos e coletando estrelas do conhecimento. 
+                Uma aventura feita por meninas, para meninas!
+            </p>
+            <p>
+                <strong>🌟 Missão:</strong> Salvar o Sistema Solar da escuridão cósmica!
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SPACE LUNA - Explorando o universo com você 💫</p>
+    </footer>
+
+    <div class="stars" id="stars"></div>
+
+    <script>
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            if (!starsContainer) return;
+            const numStars = 150;
+            starsContainer.innerHTML = '';
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const duration = Math.random() * 3 + 2;
+                star.style.animationDuration = duration + 's';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        const btnTema = document.getElementById('btn-tema');
+        const body = document.body;
+        const temaSalvo = localStorage.getItem('temaSpaceLuna');
+        if (temaSalvo === 'claro') {
+            body.classList.add('tema-claro');
+            btnTema.textContent = '🌙';
+        } else {
+            btnTema.textContent = '🌞';
+        }
+        btnTema.addEventListener('click', () => {
+            body.classList.toggle('tema-claro');
+            if (body.classList.contains('tema-claro')) {
+                localStorage.setItem('temaSpaceLuna', 'claro');
+                btnTema.textContent = '🌙';
+            } else {
+                localStorage.setItem('temaSpaceLuna', 'escuro');
+                btnTema.textContent = '🌞';
+            }
+        });
+    </script>
+</body>
+</html>

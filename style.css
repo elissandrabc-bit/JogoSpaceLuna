@@ -1,124 +1,453 @@
-html, body {
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	background: #000000;
-	color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0f2a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
 }
 
-input[type="file"] {
-	color: black;
+/* ======================================== */
+/* ESTRELAS CINTILANTES */
+/* ======================================== */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
 }
 
-/* for scaling checkboxes according to the font size */
-.c3-auto-size-checkbox {
-	font-size: 1em;
-	width: 1em;
-	height: 1em;
-	vertical-align: bottom;
-	margin: 0.1em 0.25em;
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 3s infinite ease-in-out;
 }
 
-html, body, canvas {
-	touch-action-delay: none;
-	touch-action: none;
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-canvas, .c3htmlwrap {
-	position: absolute;
+/* ======================================== */
+/* ANIMAÇÕES */
+/* ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.c3htmlwrap {
-	contain: strict;
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
-.c3overlay {
-	pointer-events: none;
+/* ======================================== */
+/* HEADER */
+/* ======================================== */
+header {
+    background: rgba(10, 30, 60, 0.95);
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 2px solid #ff66cc;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
-.c3htmlwrap[interactive] > * {
-	pointer-events: auto;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* HACK - work around elements being selectable only in iOS WKWebView for some reason */
-html[ioswebview] .c3htmlwrap,
-html[ioswebview] canvas {
-	-webkit-user-select: none;
-	user-select: none;
+.logo-titulo {
+    flex: 1;
 }
 
-html[ioswebview] .c3htmlwrap > * {
-	-webkit-user-select: auto;
-	user-select: auto;
+header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    color: #ff99cc;
+    transition: transform 0.3s ease;
 }
 
-#notSupportedWrap {
-	margin: 2em auto 1em auto;
-	width: 75%;
-	max-width: 45em;
-	border: 2px solid #aaa;
-	border-radius: 1em;
-	padding: 2em;
-	background-color: #f0f0f0;
-	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-	color: black;
+header h1:hover {
+    transform: scale(1.02);
 }
 
-#notSupportedTitle {
-	font-size: 1.8em;
+/* Botão tema */
+.btn-tema {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.notSupportedMessage {
-	font-size: 1.2em;
+.btn-tema:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.notSupportedMessage em {
-	color: #888;
+/* Navegação */
+nav {
+    margin-top: 15px;
 }
 
-/* bbcode styles */
-.bbCodeH1 {
-	font-size: 2em;
-	font-weight: bold;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
 }
 
-.bbCodeH2 {
-	font-size: 1.5em;
-	font-weight: bold;
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ff66cc;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-.bbCodeH3 {
-	font-size: 1.25em;
-	font-weight: bold;
+nav a:hover::after {
+    width: 70%;
 }
 
-.bbCodeH4 {
-	font-size: 1.1em;
-	font-weight: bold;
+nav a:hover {
+    background: #ff66cc;
+    color: #0a0f2a;
+    transform: translateY(-3px);
 }
 
-.bbCodeItem::before {
-	content: " • ";
+nav a.ativo {
+    background: #ff66cc;
+    color: #0a0f2a;
+    box-shadow: 0 0 15px rgba(255, 102, 204, 0.5);
 }
 
-/* For text icons converted to HTML: size the height to the line height
-   preserving the aspect ratio. Also add position: relative as that allows
-   just adding a 'top' style for the iconoffsety style. */
-.c3-text-icon {
-	height: 1em;
-	width: auto;
-	position: relative;
+nav a.ativo::after {
+    width: 70%;
 }
 
-/* screen reader text */
-.c3-screen-reader-text {
-	position: absolute;
-	width: 1px;
-    height: 1px;
+/* ======================================== */
+/* MAIN */
+/* ======================================== */
+main {
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+/* ======================================== */
+/* HOME */
+/* ======================================== */
+.home-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.home-texto {
+    flex: 1;
+    min-width: 280px;
+}
+
+.home-texto h2 {
+    color: #ff99cc;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.home-texto p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.home-texto ul {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.home-texto li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Jogo na Home */
+.home-jogo {
+    flex: 1;
+    min-width: 320px;
+}
+
+.jogo-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ff66cc;
+    transition: transform 0.3s ease;
+}
+
+.jogo-card:hover {
+    transform: translateY(-5px);
+}
+
+.jogo-card h3 {
+    color: #ff99cc;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.jogo-iframe-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
     overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+    margin-bottom: 15px;
+    background: #000;
 }
+
+.jogo-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.btn-jogo-full {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff66cc, #ff3399);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-jogo-full:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px rgba(255, 102, 204, 0.6);
+}
+
+/* ======================================== */
+/* HISTÓRIA */
+/* ======================================== */
+.historia h2, .curiosidades h2, .servicos h2 {
+    color: #ff99cc;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.campo-imagem, .campo-texto {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.campo-imagem:hover, .campo-texto:hover {
+    transform: translateY(-5px);
+}
+
+.personagem {
+    max-width: 250px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 20px;
+    border: 3px solid #ff66cc;
+    transition: transform 0.3s ease;
+}
+
+.personagem:hover {
+    transform: scale(1.05);
+}
+
+/* ======================================== */
+/* CURIOSIDADES */
+/* ======================================== */
+.planetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.planeta {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.planeta:nth-child(1) { animation-delay: 0.1s; }
+.planeta:nth-child(2) { animation-delay: 0.2s; }
+.planeta:nth-child(3) { animation-delay: 0.3s; }
+.planeta:nth-child(4) { animation-delay: 0.4s; }
+.planeta:nth-child(5) { animation-delay: 0.5s; }
+.planeta:nth-child(6) { animation-delay: 0.6s; }
+.planeta:nth-child(7) { animation-delay: 0.7s; }
+.planeta:nth-child(8) { animation-delay: 0.8s; }
+.planeta:nth-child(9) { animation-delay: 0.9s; }
+
+.planeta:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 102, 204, 0.25);
+    box-shadow: 0 10px 25px rgba(255, 102, 204, 0.3);
+}
+
+.planeta h3 {
+    color: #ff99cc;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* ======================================== */
+/* SERVIÇOS */
+/* ======================================== */
+.servicos ul {
+    list-style: none;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.servicos li {
+    padding: 12px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.servicos li:hover {
+    transform: translateX(10px);
+    padding-left: 10px;
+    color: #ff99cc;
+}
+
+.formacao {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.formacao:hover {
+    transform: translateY(-5px);
+}
+
+.foto-autora {
+    max-width: 200px;
+    border-radius: 50%;
+    border: 4px solid #ff66cc;
+    margin: 15px auto;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.foto-autora:hover {
+    transform: scale(1.05);
+    border-color: #ff99cc;
+}
+
+/* ======================================== */
+/* FOOTER */
+/* ======================================== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(10, 30, 60, 0.9);
+    margin-top: auto;
+    font-size: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ======================================== */
+/* MODAL DE IDADE */
+/* ======================================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #0a1a3a, #0a0f2a
+
+    
