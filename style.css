@@ -905,3 +905,280 @@ footer {
         font-size: 24px;
     }
 }
+
+/* ============ PÁGINA SERVIÇOS ============ */
+.servicos-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.servicos-header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.servicos-header h2 {
+    color: #ff69b4;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.servicos-header p {
+    font-size: 18px;
+}
+
+/* GRID DE SERVIÇOS */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.servico-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.servico-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+}
+
+.servico-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.servico-card h3 {
+    color: #ff69b4;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.servico-card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.servico-lista {
+    text-align: left;
+    margin: 15px 0;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.servico-lista li {
+    margin: 8px 0;
+    font-size: 13px;
+    color: #ffb6d9;
+}
+
+.btn-saiba-mais {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-saiba-mais:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+}
+
+/* SEÇÃO DA CRIADORA - COM FOTO REDONDA */
+.criadora-section {
+    margin: 50px 0;
+}
+
+.criadora-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 35px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.criadora-card:hover {
+    transform: translateY(-3px);
+}
+
+.foto-criadora {
+    flex-shrink: 0;
+}
+
+.foto-criadora img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff69b4;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #2a1b3d, #1a0f2e);
+}
+
+.foto-criadora img:hover {
+    transform: scale(1.05);
+    border-color: #ffb6d9;
+    box-shadow: 0 0 40px rgba(255, 105, 180, 0.8);
+}
+
+.criadora-info {
+    flex: 1;
+}
+
+.criadora-info h3 {
+    color: #ff69b4;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.criadora-info h4 {
+    color: #ffb6d9;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.criadora-info p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 105, 180, 0.2);
+    border-radius: 50%;
+    font-size: 24px;
+    text-decoration: none;
+    color: #ff69b4;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #ff69b4;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* SEÇÃO DE CONTATO */
+.servicos-contato {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+}
+
+.servicos-contato h3 {
+    color: #ff69b4;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.servicos-contato p {
+    margin-bottom: 20px;
+}
+
+.contato-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contato-item {
+    background: rgba(255, 105, 180, 0.15);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contato-item:hover {
+    background: rgba(255, 105, 180, 0.3);
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVIDADE PARA SERVIÇOS */
+@media (max-width: 768px) {
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .criadora-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .foto-criadora img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .redes-sociais {
+        justify-content: center;
+    }
+    
+    .contato-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .servicos-header h2 {
+        font-size: 24px;
+    }
+    
+    .criadora-info h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servico-card {
+        padding: 20px;
+    }
+    
+    .servico-icon {
+        font-size: 45px;
+    }
+    
+    .foto-criadora img {
+        width: 120px;
+        height: 120px;
+    }
+}

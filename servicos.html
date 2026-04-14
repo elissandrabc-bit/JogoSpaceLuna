@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPACE LUNA - Serviços</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,9 +13,7 @@
             <div class="logo-titulo">
                 <h1>🌙 SPACE LUNA</h1>
             </div>
-            <button id="btn-tema" class="btn-tema" aria-label="Mudar tema">
-                🌞
-            </button>
+            <button id="btn-tema" class="btn-tema" aria-label="Mudar tema">🌞</button>
         </div>
         <nav>
             <a href="index.html">HOME</a>
@@ -25,26 +23,100 @@
         </nav>
     </header>
 
-    <main class="servicos">
-        <h2>✨ Serviços</h2>
-        <p>O jogo SPACE LUNA oferece uma experiência educativa e divertida, com:</p>
-        <ul>
-            <li>🌌 Missões interativas por cada planeta</li>
-            <li>📚 Conteúdo alinhado ao ensino médio</li>
-            <li>🎮 Design pensado especialmente para meninas</li>
-            <li>🏆 Certificado de conhecimento astronômico</li>
-            <li>⭐ Desafios diários e ranking de pontuação</li>
-        </ul>
-
-        <div class="formacao">
-            <h3>📸 Sobre a criadora</h3>
-            <div class="campo-imagem-formacao">
-                <img src="imagens/minha-foto.jpg" alt="Minha foto" class="foto-autora" onerror="this.src='https://via.placeholder.com/250x250?text=Minha+Foto'">
-                <p><em>Substitua o arquivo "minha-foto.jpg" pela sua imagem.</em></p>
+    <main>
+        <div class="servicos-container">
+            <div class="servicos-header">
+                <h2>🚀 Nossos Serviços 🌙</h2>
+                <p>Conheça tudo o que o SPACE LUNA oferece para você!</p>
             </div>
-            <p><strong>Formação:</strong> Estudante do primeiro período de Engenharia de Software</p>
-            <p>Este site é um projeto acadêmico da Faculdade Integrado - Campo Mourão-PR</p>
-            <p>📧 Contato: [elissandra.bc@gmail.com]</p>
+
+            <!-- GRID DE SERVIÇOS -->
+            <div class="servicos-grid">
+                <!-- Serviço 1 -->
+                <div class="servico-card">
+                    <div class="servico-icon">🎮</div>
+                    <h3>Jogo Educativo</h3>
+                    <p>Acesse o jogo completo SPACE LUNA com missões, desafios e aventuras pelo Sistema Solar. Aprenda astronomia se divertindo!</p>
+                    <ul class="servico-lista">
+                        <li>✓ 8 planetas para explorar</li>
+                        <li>✓ Missões interativas</li>
+                        <li>✓ Certificados de conclusão</li>
+                    </ul>
+                    <button class="btn-saiba-mais">Saiba mais →</button>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="servico-card">
+                    <div class="servico-icon">📚</div>
+                    <h3>Conteúdo Didático</h3>
+                    <p>Materiais de apoio para estudantes e professores, alinhados ao ensino médio. Torne as aulas de astronomia mais divertidas!</p>
+                    <ul class="servico-lista">
+                        <li>✓ Apostilas gratuitas</li>
+                        <li>✓ Vídeo-aulas exclusivas</li>
+                        <li>✓ Quiz interativos</li>
+                    </ul>
+                    <button class="btn-saiba-mais">Saiba mais →</button>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="servico-card">
+                    <div class="servico-icon">🏆</div>
+                    <h3>Desafios & Ranking</h3>
+                    <p>Participe de competições semanais, acumule pontos e suba no ranking das melhores exploradoras espaciais!</p>
+                    <ul class="servico-lista">
+                        <li>✓ Desafios semanais</li>
+                        <li>✓ Medalhas exclusivas</li>
+                        <li>✓ Premiações mensais</li>
+                    </ul>
+                    <button class="btn-saiba-mais">Saiba mais →</button>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="servico-card">
+                    <div class="servico-icon">👩‍🚀</div>
+                    <h3>Comunidade Luna</h3>
+                    <p>Faça parte da nossa comunidade exclusiva para meninas que amam ciência e astronomia. Troque ideias e faça amizades!</p>
+                    <ul class="servico-lista">
+                        <li>✓ Fórum de discussão</li>
+                        <li>✓ Eventos online</li>
+                        <li>✓ Grupos de estudo</li>
+                    </ul>
+                    <button class="btn-saiba-mais">Saiba mais →</button>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DA CRIADORA COM FOTO REDONDA -->
+            <div class="criadora-section">
+                <div class="criadora-card">
+                    <div class="foto-criadora">
+                        <img src="minha-foto.jpeg" alt="Foto da Criadora" id="foto-perfil" onerror="this.src='https://via.placeholder.com/150/ff69b4/ffffff?text=🌙+SUA+FOTO+AQUI'">
+                    </div>
+                    <div class="criadora-info">
+                        <h3>🌟 Sobre a Criadora 🌟</h3>
+                        <h4>Luna Space - Criadora do Projeto</h4>
+                        <p>Olá! Sou a criadora do SPACE LUNA, um projeto nascido do amor pela astronomia e da vontade de inspirar mais meninas a explorarem o universo da ciência.</p>
+                        <p>💫 <strong>Missão:</strong> Tornar o aprendizado sobre o espaço divertido, acessível e empoderador para todas as jovens.</p>
+                        <p>🎯 <strong>Objetivo:</strong> Incentivar meninas a seguirem carreiras nas áreas STEM (Ciência, Tecnologia, Engenharia e Matemática).</p>
+                        <div class="redes-sociais">
+                            <a href="#" class="social-icon">📧</a>
+                            <a href="#" class="social-icon">💻</a>
+                            <a href="#" class="social-icon">📷</a>
+                            <a href="#" class="social-icon">🎨</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DE CONTATO -->
+            <div class="servicos-contato">
+                <h3>📞 Entre em Contato</h3>
+                <p>Quer saber mais sobre o SPACE LUNA? Tem alguma sugestão ou parceria?</p>
+                <div class="contato-info">
+                    <div class="contato-item">📧 contato@spaceluna.com</div>
+                    <div class="contato-item">📱 (11) 99999-9999</div>
+                    <div class="contato-item">🌐 www.spaceluna.com</div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -76,25 +148,55 @@
         }
         createStars();
 
+        // Tema rosa claro/escuro
         const btnTema = document.getElementById('btn-tema');
         const body = document.body;
         const temaSalvo = localStorage.getItem('temaSpaceLuna');
+        
         if (temaSalvo === 'claro') {
             body.classList.add('tema-claro');
-            btnTema.textContent = '🌙';
+            if (btnTema) btnTema.textContent = '🌙';
         } else {
-            btnTema.textContent = '🌞';
+            if (btnTema) btnTema.textContent = '🌞';
         }
-        btnTema.addEventListener('click', () => {
-            body.classList.toggle('tema-claro');
-            if (body.classList.contains('tema-claro')) {
-                localStorage.setItem('temaSpaceLuna', 'claro');
-                btnTema.textContent = '🌙';
-            } else {
-                localStorage.setItem('temaSpaceLuna', 'escuro');
-                btnTema.textContent = '🌞';
+        
+        if (btnTema) {
+            btnTema.addEventListener('click', () => {
+                body.classList.toggle('tema-claro');
+                if (body.classList.contains('tema-claro')) {
+                    localStorage.setItem('temaSpaceLuna', 'claro');
+                    btnTema.textContent = '🌙';
+                } else {
+                    localStorage.setItem('temaSpaceLuna', 'escuro');
+                    btnTema.textContent = '🌞';
+                }
+            });
+        }
+
+        // Função para trocar a foto (opcional)
+        function trocarFoto() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const img = document.getElementById('foto-perfil');
+                        img.src = event.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
             }
-        });
+            input.click();
+        }
+
+        // Clique duplo na foto para trocar (opcional)
+        const fotoPerfil = document.getElementById('foto-perfil');
+        if (fotoPerfil) {
+            fotoPerfil.addEventListener('dblclick', trocarFoto);
+        }
     </script>
 </body>
 </html>
