@@ -535,28 +535,28 @@ footer {
 }
 
 /* ======================================== */
-/* TEMA CLARO - COMPLETO */
+/* TEMA ROSA CLARO (antigo tema claro) */
 /* ======================================== */
 body.tema-claro {
-    background: #f0f4ff;
-    color: #1a1a2e;
+    background: #fff0f5;  /* Lavanda blush - rosa bem claro */
+    color: #4a0e2e;
 }
 
 body.tema-claro header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 240, 245, 0.95);
     border-bottom: 2px solid #ff66cc;
 }
 
 body.tema-claro header h1 {
-    color: #ff3399;
+    color: #d63384;
 }
 
 body.tema-claro .btn-tema {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(214, 51, 132, 0.15);
 }
 
 body.tema-claro nav a {
-    color: #1a1a2e;
+    color: #4a0e2e;
 }
 
 body.tema-claro nav a:hover {
@@ -574,16 +574,16 @@ body.tema-claro .historia h2,
 body.tema-claro .curiosidades h2,
 body.tema-claro .servicos h2,
 body.tema-claro .jogo-card h3 {
-    color: #ff3399;
+    color: #d63384;
 }
 
 body.tema-claro .home-texto p,
 body.tema-claro .home-texto li {
-    color: #1a1a2e;
+    color: #4a0e2e;
 }
 
 body.tema-claro .home-texto li {
-    border-bottom-color: rgba(0, 0, 0, 0.1);
+    border-bottom-color: rgba(214, 51, 132, 0.2);
 }
 
 body.tema-claro .campo-imagem,
@@ -592,47 +592,56 @@ body.tema-claro .planeta,
 body.tema-claro .servicos ul,
 body.tema-claro .formacao,
 body.tema-claro .jogo-card {
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 200, 220, 0.5);
     border-color: #ff66cc;
 }
 
 body.tema-claro .planeta p,
 body.tema-claro .servicos li,
 body.tema-claro .formacao p {
-    color: #1a1a2e;
+    color: #4a0e2e;
 }
 
 body.tema-claro .servicos li {
-    border-bottom-color: rgba(0, 0, 0, 0.1);
+    border-bottom-color: rgba(214, 51, 132, 0.2);
 }
 
 body.tema-claro footer {
-    background: rgba(255, 255, 255, 0.9);
-    color: #1a1a2e;
+    background: rgba(255, 240, 245, 0.95);
+    color: #4a0e2e;
 }
 
 body.tema-claro .modal-content {
-    background: linear-gradient(135deg, #e0e8ff, #f0f4ff);
+    background: linear-gradient(135deg, #ffe4ed, #fff0f5);
     border: 2px solid #ff66cc;
 }
 
 body.tema-claro .modal-content p,
 body.tema-claro .modal-content h2,
 body.tema-claro .campo-modal label {
-    color: #1a1a2e;
+    color: #4a0e2e;
 }
 
 body.tema-claro .campo-modal input {
-    background: rgba(0, 0, 0, 0.1);
-    color: #1a1a2e;
+    background: rgba(214, 51, 132, 0.1);
+    color: #4a0e2e;
 }
 
 body.tema-claro .campo-modal input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(74, 14, 46, 0.5);
 }
 
 body.tema-claro .aviso-modal {
-    color: #ff3399;
+    color: #d63384;
+}
+
+body.tema-claro .stars .star {
+    background-color: #d63384;
+}
+
+body.tema-claro .btn-jogo-full,
+body.tema-claro .btn-verificar {
+    background: linear-gradient(135deg, #d63384, #ff66cc);
 }
 
 /* ======================================== */
@@ -705,5 +714,83 @@ body.tema-claro .aviso-modal {
     
     .planeta p {
         font-size: 0.85rem;
+    }
+}
+
+/* ======================================== */
+/* PREVIEW DO JOGO NA HOME (ESTÁTICO) */
+/* ======================================== */
+
+.jogo-preview {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #0a1a3a, #0a0f2a);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ff66cc;
+}
+
+.preview-placeholder {
+    text-align: center;
+    padding: 20px;
+}
+
+.preview-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.preview-placeholder p {
+    margin: 5px 0;
+}
+
+.preview-text {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.btn-jogar-agora {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff66cc, #ff3399);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-jogar-agora:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.6);
+}
+
+body.tema-claro .jogo-preview {
+    background: linear-gradient(135deg, #ffe4ed, #fff0f5);
+    border-color: #d63384;
+}
+
+body.tema-claro .preview-placeholder p {
+    color: #4a0e2e;
+}
+
+@media (max-width: 768px) {
+    .jogo-preview {
+        height: 250px;
+    }
+    
+    .preview-icon {
+        font-size: 3rem;
+    }
+    
+    .btn-jogar-agora {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }

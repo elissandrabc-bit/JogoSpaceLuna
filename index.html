@@ -65,18 +65,19 @@
                     </ul>
                 </div>
 
-                <!-- Lado direito - JOGO -->
+                <!-- Lado direito - JOGO ESTÁTICO (prévia) -->
                 <div class="home-jogo">
                     <div class="jogo-card">
-                        <h3>🎮 Jogue Agora!</h3>
-                        <div class="jogo-iframe-container">
-                            <iframe src="Space_Luna_Sistema_Solar/index.html" 
-                                    title="Jogo Space Luna - Sistema Solar"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
-                            </iframe>
+                        <h3>🎮 Space Luna - O Jogo</h3>
+                        <div class="jogo-preview">
+                            <div class="preview-placeholder">
+                                <div class="preview-icon">🌙</div>
+                                <p>Prepare-se para a aventura!</p>
+                                <p class="preview-text">Explore o Sistema Solar com Luna</p>
+                            </div>
                         </div>
-                        <a href="https://elissandrabc-bit.github.io/JogoSistemaSolar_SpaceLuna/" target="_blank" class="btn-jogo-full">🔗 Abrir em tela cheia →</a>
+                        <!-- Botão que abre o jogo em nova aba -->
+                        <a href="https://elissandrabc-bit.github.io/JogoSistemaSolar_SpaceLuna/" target="_blank" class="btn-jogar-agora">🔗 JOGAR AGORA →</a>
                     </div>
                 </div>
             </div>
@@ -119,9 +120,9 @@
         const main = document.querySelector('main');
         
         function blurContent() {
-            if (main) main.style.filter = 'blur(8px)';
-            if (header) header.style.filter = 'blur(8px)';
-            if (footer) footer.style.filter = 'blur(8px)';
+            if (main) main.style.filter = 'blur(5px)';
+            if (header) header.style.filter = 'blur(5px)';
+            if (footer) footer.style.filter = 'blur(5px)';
         }
         
         function unblurContent() {
@@ -131,62 +132,68 @@
         }
         
         if (usuarioAprovado === 'true') {
-            modal.style.display = 'none';
+            if (modal) modal.style.display = 'none';
             unblurContent();
         } else {
-            modal.style.display = 'flex';
+            if (modal) modal.style.display = 'flex';
             blurContent();
         }
         
         const btnVerificar = document.getElementById('btn-verificar');
-        btnVerificar.addEventListener('click', function() {
-            const nomeInput = document.getElementById('nome-usuario');
-            const idadeInput = document.getElementById('idade-usuario');
-            const nome = nomeInput.value.trim();
-            const idade = parseInt(idadeInput.value);
-            
-            if (nome === '') {
-                alert('Por favor, digite seu nome!');
-                nomeInput.focus();
-                return;
-            }
-            if (isNaN(idade) || idade <= 0) {
-                alert('Por favor, digite uma idade válida!');
-                idadeInput.focus();
-                return;
-            }
-            if (idade < 15) {
-                alert(`🚫 Olá ${nome}! Infelizmente você tem apenas ${idade} anos.\n\nO SPACE LUNA é recomendado para meninas a partir de 15 anos.`);
-                nomeInput.value = '';
-                idadeInput.value = '';
-            } else {
-                alert(`✨ Bem-vinda ${nome}! ✨\n\nPrepare-se para explorar o Sistema Solar com a Luna! 🚀🌙`);
-                modal.style.display = 'none';
-                unblurContent();
-                sessionStorage.setItem('spaceLunaAprovado', 'true');
-            }
-        });
+        if (btnVerificar) {
+            btnVerificar.addEventListener('click', function() {
+                const nomeInput = document.getElementById('nome-usuario');
+                const idadeInput = document.getElementById('idade-usuario');
+                const nome = nomeInput ? nomeInput.value.trim() : '';
+                const idade = idadeInput ? parseInt(idadeInput.value) : 0;
+                
+                if (nome === '') {
+                    alert('Por favor, digite seu nome!');
+                    if (nomeInput) nomeInput.focus();
+                    return;
+                }
+                if (isNaN(idade) || idade <= 0) {
+                    alert('Por favor, digite uma idade válida!');
+                    if (idadeInput) idadeInput.focus();
+                    return;
+                }
+                if (idade < 15) {
+                    alert(`🚫 Olá ${nome}! Infelizmente você tem apenas ${idade} anos.\n\nO SPACE LUNA é recomendado para meninas a partir de 15 anos.`);
+                    if (nomeInput) nomeInput.value = '';
+                    if (idadeInput) idadeInput.value = '';
+                } else {
+                    alert(`✨ Bem-vinda ${nome}! ✨\n\nPrepare-se para explorar o Sistema Solar com a Luna! 🚀🌙`);
+                    if (modal) modal.style.display = 'none';
+                    unblurContent();
+                    sessionStorage.setItem('spaceLunaAprovado', 'true');
+                }
+            });
+        }
 
-        // Tema claro/escuro
+        // Tema rosa claro/escuro
         const btnTema = document.getElementById('btn-tema');
         const body = document.body;
         const temaSalvo = localStorage.getItem('temaSpaceLuna');
+        
         if (temaSalvo === 'claro') {
             body.classList.add('tema-claro');
-            btnTema.textContent = '🌙';
+            if (btnTema) btnTema.textContent = '🌙';
         } else {
-            btnTema.textContent = '🌞';
+            if (btnTema) btnTema.textContent = '🌞';
         }
-        btnTema.addEventListener('click', () => {
-            body.classList.toggle('tema-claro');
-            if (body.classList.contains('tema-claro')) {
-                localStorage.setItem('temaSpaceLuna', 'claro');
-                btnTema.textContent = '🌙';
-            } else {
-                localStorage.setItem('temaSpaceLuna', 'escuro');
-                btnTema.textContent = '🌞';
-            }
-        });
+        
+        if (btnTema) {
+            btnTema.addEventListener('click', () => {
+                body.classList.toggle('tema-claro');
+                if (body.classList.contains('tema-claro')) {
+                    localStorage.setItem('temaSpaceLuna', 'claro');
+                    btnTema.textContent = '🌙';
+                } else {
+                    localStorage.setItem('temaSpaceLuna', 'escuro');
+                    btnTema.textContent = '🌞';
+                }
+            });
+        }
     </script>
 </body>
 </html>
