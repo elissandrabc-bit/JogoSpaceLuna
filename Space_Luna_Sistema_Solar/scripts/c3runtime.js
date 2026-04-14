@@ -1387,21 +1387,21 @@ self.C3_ExpressionFuncs = [
 		() => "",
 		() => "Correndo",
 		() => 1,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("Planeta: ", v0.GetValue());
+		},
+		() => 8,
 		() => 20,
 		() => 0.4,
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0(360);
-		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and("Vidas: ", v0.GetValue());
 		},
 		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => and("Planeta: ", v0.GetValue());
-		},
-		() => 5
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0();
+		}
 ];
 
 
