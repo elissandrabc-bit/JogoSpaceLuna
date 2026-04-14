@@ -30,19 +30,18 @@
                 <p>Conheça tudo o que o SPACE LUNA oferece para você!</p>
             </div>
 
-            <!-- GRID DE SERVIÇOS -->
+            <!-- GRID DE SERVIÇOS - APENAS 3 ITENS -->
             <div class="servicos-grid">
                 <!-- Serviço 1 -->
                 <div class="servico-card">
                     <div class="servico-icon">🎮</div>
                     <h3>Jogo Educativo</h3>
                     <p>Acesse o jogo completo SPACE LUNA com missões, desafios e aventuras pelo Sistema Solar. Aprenda astronomia se divertindo!</p>
-                    <ul class="servico-lista">
-                        <li>✓ 8 planetas para explorar</li>
-                        <li>✓ Missões interativas</li>
-                        <li>✓ Certificados de conclusão</li>
-                    </ul>
-                    <button class="btn-saiba-mais">Saiba mais →</button>
+                    <div class="servico-destaque">
+                        <span>🌟 8 planetas para explorar</span>
+                        <span>🏆 Missões interativas</span>
+                        <span>📜 Certificados de conclusão</span>
+                    </div>
                 </div>
 
                 <!-- Serviço 2 -->
@@ -50,38 +49,23 @@
                     <div class="servico-icon">📚</div>
                     <h3>Conteúdo Didático</h3>
                     <p>Materiais de apoio para estudantes e professores, alinhados ao ensino médio. Torne as aulas de astronomia mais divertidas!</p>
-                    <ul class="servico-lista">
-                        <li>✓ Apostilas gratuitas</li>
-                        <li>✓ Vídeo-aulas exclusivas</li>
-                        <li>✓ Quiz interativos</li>
-                    </ul>
-                    <button class="btn-saiba-mais">Saiba mais →</button>
+                    <div class="servico-destaque">
+                        <span>📖 Apostilas gratuitas</span>
+                        <span>🎥 Vídeo-aulas exclusivas</span>
+                        <span>❓ Quiz interativos</span>
+                    </div>
                 </div>
 
                 <!-- Serviço 3 -->
                 <div class="servico-card">
-                    <div class="servico-icon">🏆</div>
-                    <h3>Desafios & Ranking</h3>
-                    <p>Participe de competições semanais, acumule pontos e suba no ranking das melhores exploradoras espaciais!</p>
-                    <ul class="servico-lista">
-                        <li>✓ Desafios semanais</li>
-                        <li>✓ Medalhas exclusivas</li>
-                        <li>✓ Premiações mensais</li>
-                    </ul>
-                    <button class="btn-saiba-mais">Saiba mais →</button>
-                </div>
-
-                <!-- Serviço 4 -->
-                <div class="servico-card">
                     <div class="servico-icon">👩‍🚀</div>
                     <h3>Comunidade Luna</h3>
                     <p>Faça parte da nossa comunidade exclusiva para meninas que amam ciência e astronomia. Troque ideias e faça amizades!</p>
-                    <ul class="servico-lista">
-                        <li>✓ Fórum de discussão</li>
-                        <li>✓ Eventos online</li>
-                        <li>✓ Grupos de estudo</li>
-                    </ul>
-                    <button class="btn-saiba-mais">Saiba mais →</button>
+                    <div class="servico-destaque">
+                        <span>💬 Fórum de discussão</span>
+                        <span>🎉 Eventos online</span>
+                        <span>📚 Grupos de estudo</span>
+                    </div>
                 </div>
             </div>
 
@@ -89,32 +73,25 @@
             <div class="criadora-section">
                 <div class="criadora-card">
                     <div class="foto-criadora">
-                        <img src="minha-foto.jpeg" alt="Foto da Criadora" id="foto-perfil" onerror="this.src='https://via.placeholder.com/150/ff69b4/ffffff?text=🌙+SUA+FOTO+AQUI'">
+                        <img src="imagens/minha-foto.jpg" alt="Foto da Criadora" id="foto-perfil" onerror="this.src='https://via.placeholder.com/150/ff69b4/ffffff?text=🌙+SUA+FOTO+AQUI'">
                     </div>
                     <div class="criadora-info">
                         <h3>🌟 Sobre a Criadora 🌟</h3>
-                        <h4>Luna Space - Criadora do Projeto</h4>
+                        <h4>Criadora do Projeto Space Luna</h4>
                         <p>Olá! Sou a criadora do SPACE LUNA, um projeto nascido do amor pela astronomia e da vontade de inspirar mais meninas a explorarem o universo da ciência.</p>
                         <p>💫 <strong>Missão:</strong> Tornar o aprendizado sobre o espaço divertido, acessível e empoderador para todas as jovens.</p>
-                        <p>🎯 <strong>Objetivo:</strong> Incentivar meninas a seguirem carreiras nas áreas STEM (Ciência, Tecnologia, Engenharia e Matemática).</p>
-                        <div class="redes-sociais">
-                            <a href="#" class="social-icon">📧</a>
-                            <a href="#" class="social-icon">💻</a>
-                            <a href="#" class="social-icon">📷</a>
-                            <a href="#" class="social-icon">🎨</a>
-                        </div>
+                        <p>🎯 <strong>Objetivo:</strong> Incentivar meninas a seguirem carreiras nas áreas STEM.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- SEÇÃO DE CONTATO -->
+            <!-- SEÇÃO DE CONTATO SIMPLIFICADA -->
             <div class="servicos-contato">
                 <h3>📞 Entre em Contato</h3>
-                <p>Quer saber mais sobre o SPACE LUNA? Tem alguma sugestão ou parceria?</p>
+                <p>Quer saber mais sobre o SPACE LUNA? Tem alguma sugestão?</p>
                 <div class="contato-info">
                     <div class="contato-item">📧 contato@spaceluna.com</div>
                     <div class="contato-item">📱 (11) 99999-9999</div>
-                    <div class="contato-item">🌐 www.spaceluna.com</div>
                 </div>
             </div>
         </div>
@@ -173,29 +150,25 @@
             });
         }
 
-        // Função para trocar a foto (opcional)
-        function trocarFoto() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const img = document.getElementById('foto-perfil');
-                        img.src = event.target.result;
-                    }
-                    reader.readAsDataURL(file);
-                }
-            }
-            input.click();
-        }
-
-        // Clique duplo na foto para trocar (opcional)
+        // Duplo clique na foto para trocar
         const fotoPerfil = document.getElementById('foto-perfil');
         if (fotoPerfil) {
-            fotoPerfil.addEventListener('dblclick', trocarFoto);
+            fotoPerfil.addEventListener('dblclick', function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            fotoPerfil.src = event.target.result;
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                }
+                input.click();
+            });
         }
     </script>
 </body>

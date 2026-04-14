@@ -81,4 +81,36 @@
                 star.style.top = Math.random() * 100 + '%';
                 const duration = Math.random() * 3 + 2;
                 star.style.animationDuration = duration + 's';
-                star.style.animationDelay = Math.random() * 5 + '
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        // Tema rosa claro/escuro
+        const btnTema = document.getElementById('btn-tema');
+        const body = document.body;
+        const temaSalvo = localStorage.getItem('temaSpaceLuna');
+        
+        if (temaSalvo === 'claro') {
+            body.classList.add('tema-claro');
+            if (btnTema) btnTema.textContent = '🌙';
+        } else {
+            if (btnTema) btnTema.textContent = '🌞';
+        }
+        
+        if (btnTema) {
+            btnTema.addEventListener('click', () => {
+                body.classList.toggle('tema-claro');
+                if (body.classList.contains('tema-claro')) {
+                    localStorage.setItem('temaSpaceLuna', 'claro');
+                    btnTema.textContent = '🌙';
+                } else {
+                    localStorage.setItem('temaSpaceLuna', 'escuro');
+                    btnTema.textContent = '🌞';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

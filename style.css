@@ -21,17 +21,31 @@ body.tema-claro {
     color: #4a154b;
 }
 
+body.tema-claro header {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.tema-claro nav a {
+    color: #4a154b;
+}
+
 body.tema-claro .jogo-card,
 body.tema-claro .card-curiosidade,
-body.tema-claro .servico-card {
-    background: rgba(255, 255, 255, 0.95);
+body.tema-claro .servico-card,
+body.tema-claro .personagem-card {
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-body.tema-claro .btn-jogar-agora,
-body.tema-claro .btn-saiba-mais {
-    background: #ff6b9d;
-    color: white;
+body.tema-claro .home-texto,
+body.tema-claro .historia-texto,
+body.tema-claro .historia-personagens,
+body.tema-claro .curiosidades-header,
+body.tema-claro .servicos-header,
+body.tema-claro .criadora-card,
+body.tema-claro .servicos-contato {
+    background: rgba(255, 255, 255, 0.85);
+    color: #4a154b;
 }
 
 body.tema-claro footer {
@@ -39,19 +53,14 @@ body.tema-claro footer {
     color: white;
 }
 
-body.tema-claro .home-texto,
-body.tema-claro .historia-texto,
-body.tema-claro .curiosidades-header {
-    background: rgba(255, 255, 255, 0.8);
-    color: #4a154b;
-}
-
-body.tema-claro nav a {
-    color: #4a154b;
-}
-
 body.tema-claro .preview-placeholder {
     background: linear-gradient(135deg, #ffb6d9, #ff69b4);
+}
+
+body.tema-claro .servico-destaque span,
+body.tema-claro .curiosidade-destaque {
+    background: rgba(255, 105, 180, 0.1);
+    color: #4a154b;
 }
 
 /* ESTRELAS DE FUNDO */
@@ -92,7 +101,7 @@ body.tema-claro .preview-placeholder {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -191,7 +200,7 @@ header {
     padding: 20px 5%;
     position: relative;
     z-index: 10;
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, background 0.3s ease;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     margin-bottom: 20px;
@@ -205,7 +214,7 @@ header {
     gap: 15px;
 }
 
-/* TÍTULO SPACE LUNA MAIS BRILHANTE */
+/* TÍTULO SPACE LUNA COM BRILHO */
 .logo-titulo h1 {
     font-size: 32px;
     background: linear-gradient(135deg, #ff69b4, #ffb6d9, #ff69b4);
@@ -308,6 +317,7 @@ main {
     padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 105, 180, 0.3);
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .home-texto h2 {
@@ -334,6 +344,7 @@ main {
 .home-jogo {
     flex: 1;
     min-width: 320px;
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
 }
 
 .jogo-card {
@@ -414,7 +425,6 @@ main {
     margin-top: 10px;
 }
 
-/* BOTÃO JOGAR CENTRALIZADO COM A FOTO */
 .btn-jogar-agora {
     display: inline-block;
     background: linear-gradient(135deg, #ff69b4, #ff1493);
@@ -444,26 +454,30 @@ main {
 .historia-texto {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
-    padding: 30px;
+    padding: 35px;
     border-radius: 20px;
     margin-bottom: 30px;
     border: 1px solid rgba(255, 105, 180, 0.3);
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .historia-texto h2 {
     color: #ff69b4;
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 32px;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
 }
 
 .historia-texto p {
-    line-height: 1.6;
-    margin-bottom: 15px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    font-size: 16px;
 }
 
 .historia-imagem {
     text-align: center;
     margin: 30px 0;
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
 }
 
 .historia-imagem img {
@@ -471,26 +485,30 @@ main {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .historia-imagem img:hover {
     transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
 }
 
 .historia-personagens {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
-    padding: 30px;
+    padding: 35px;
     border-radius: 20px;
     margin-top: 30px;
     border: 1px solid rgba(255, 105, 180, 0.3);
+    animation: fadeInUp 0.6s ease-out 0.4s backwards;
 }
 
 .historia-personagens h3 {
     color: #ff69b4;
-    margin-bottom: 20px;
-    font-size: 24px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
 }
 
 .personagens-grid {
@@ -504,34 +522,61 @@ main {
     text-align: center;
     flex: 1;
     min-width: 200px;
-    padding: 20px;
+    padding: 25px 20px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    transition: transform 0.3s ease;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    border: 1px solid rgba(255, 105, 180, 0.2);
 }
 
 .personagem-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 105, 180, 0.5);
 }
 
 .personagem-icon {
-    font-size: 60px;
+    font-size: 70px;
     margin-bottom: 15px;
+    display: inline-block;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.personagem-card:nth-child(1) .personagem-icon {
+    animation-delay: 0s;
+}
+.personagem-card:nth-child(2) .personagem-icon {
+    animation-delay: 0.5s;
+}
+.personagem-card:nth-child(3) .personagem-icon {
+    animation-delay: 1s;
 }
 
 .personagem-card h4 {
     color: #ffb6d9;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.personagem-card p {
+    line-height: 1.5;
+    font-size: 14px;
 }
 
 /* ============ PÁGINA CURIOSIDADES ============ */
+.curiosidades-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .curiosidades-header {
     text-align: center;
     margin-bottom: 40px;
     background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .curiosidades-header h2 {
@@ -540,11 +585,15 @@ main {
     margin-bottom: 15px;
 }
 
+.curiosidades-header p {
+    font-size: 18px;
+}
+
 .planetas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .card-curiosidade {
@@ -554,6 +603,7 @@ main {
     padding: 25px;
     border: 1px solid rgba(255, 105, 180, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .card-curiosidade:hover {
@@ -562,7 +612,7 @@ main {
 }
 
 .planeta-icon {
-    font-size: 50px;
+    font-size: 48px;
     text-align: center;
     margin-bottom: 15px;
 }
@@ -588,6 +638,18 @@ main {
     border-radius: 10px;
 }
 
+.curiosidades-extra {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card-curiosidade.extra {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
 /* ============ PÁGINA SERVIÇOS ============ */
 .servicos-container {
     max-width: 1200px;
@@ -598,9 +660,10 @@ main {
     text-align: center;
     margin-bottom: 40px;
     background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .servicos-header h2 {
@@ -609,25 +672,31 @@ main {
     margin-bottom: 15px;
 }
 
+.servicos-header p {
+    font-size: 18px;
+}
+
 .servicos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .servico-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 30px;
-    text-align: center;
+    padding: 30px 25px;
     border: 1px solid rgba(255, 105, 180, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .servico-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
 }
 
 .servico-icon {
@@ -644,24 +713,94 @@ main {
 .servico-card p {
     line-height: 1.6;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
-.btn-saiba-mais {
-    background: linear-gradient(135deg, #ff69b4, #ff1493);
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
+.servico-destaque {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 105, 180, 0.3);
+}
+
+.servico-destaque span {
+    font-size: 13px;
+    color: #ffb6d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* SEÇÃO DA CRIADORA */
+.criadora-section {
+    margin: 50px 0;
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+.criadora-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 35px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.criadora-card:hover {
+    transform: translateY(-3px);
+}
+
+.foto-criadora {
+    flex-shrink: 0;
+}
+
+.foto-criadora img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff69b4;
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
     transition: all 0.3s ease;
+    background: linear-gradient(135deg, #2a1b3d, #1a0f2e);
 }
 
-.btn-saiba-mais:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+.foto-criadora img:hover {
+    transform: scale(1.03);
+    border-color: #ffb6d9;
+    box-shadow: 0 0 35px rgba(255, 105, 180, 0.6);
 }
 
+.criadora-info {
+    flex: 1;
+}
+
+.criadora-info h3 {
+    color: #ff69b4;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.criadora-info h4 {
+    color: #ffb6d9;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.criadora-info p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* SEÇÃO DE CONTATO */
 .servicos-contato {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
@@ -670,11 +809,37 @@ main {
     text-align: center;
     margin-top: 30px;
     border: 1px solid rgba(255, 105, 180, 0.3);
+    animation: fadeInUp 0.6s ease-out 0.4s backwards;
 }
 
 .servicos-contato h3 {
     color: #ff69b4;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.servicos-contato p {
+    margin-bottom: 20px;
+}
+
+.contato-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contato-item {
+    background: rgba(255, 105, 180, 0.15);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contato-item:hover {
+    background: rgba(255, 105, 180, 0.3);
+    transform: translateY(-2px);
 }
 
 /* FOOTER */
@@ -685,12 +850,57 @@ footer {
     padding: 20px;
     position: relative;
     z-index: 10;
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, background 0.3s ease;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
 
-/* RESPONSIVIDADE */
+/* ANIMAÇÕES GERAIS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a0f2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff69b4;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff1493;
+}
+
+/* SELEÇÃO DE TEXTO */
+::selection {
+    background: #ff69b4;
+    color: white;
+}
+
+/* RESPONSIVIDADE GERAL */
 @media (max-width: 768px) {
     .home-container {
         flex-direction: column;
@@ -729,8 +939,46 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    .curiosidades-extra {
+        grid-template-columns: 1fr;
+    }
+    
     .servicos-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .criadora-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .foto-criadora img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .contato-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .servicos-header h2,
+    .curiosidades-header h2 {
+        font-size: 26px;
+    }
+    
+    .criadora-info h3 {
+        font-size: 24px;
+    }
+    
+    .historia-texto h2 {
+        font-size: 26px;
+    }
+    
+    .historia-texto p {
+        font-size: 14px;
     }
     
     .historia-imagem img {
@@ -739,6 +987,14 @@ footer {
     
     .personagens-grid {
         flex-direction: column;
+    }
+    
+    .personagem-card {
+        min-width: auto;
+    }
+    
+    .historia-personagens h3 {
+        font-size: 24px;
     }
 }
 
@@ -763,422 +1019,45 @@ footer {
     .home-texto h2 {
         font-size: 22px;
     }
-}
-
-/* SCROLLBAR PERSONALIZADA */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1a0f2e;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #ff69b4;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ff1493;
-}
-
-/* ANIMAÇÕES EXTRAS */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.home-texto, .home-jogo, .historia-texto, .card-curiosidade, .servico-card {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-::selection {
-    background: #ff69b4;
-    color: white;
-}
-
-/* ============ PÁGINA CURIOSIDADES ============ */
-.curiosidades-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.curiosidades-header {
-    text-align: center;
-    margin-bottom: 40px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 20px;
-}
-
-.curiosidades-header h2 {
-    color: #ff69b4;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.curiosidades-header p {
-    font-size: 18px;
-}
-
-/* GRID DOS PLANETAS - ORGANIZADO EM FILA/COLUNAS */
-.planetas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.card-curiosidade {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px;
-    border: 1px solid rgba(255, 105, 180, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-curiosidade:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
-}
-
-.planeta-icon {
-    font-size: 48px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.card-curiosidade h3 {
-    color: #ff69b4;
-    margin-bottom: 15px;
-    font-size: 24px;
-    text-align: center;
-}
-
-.card-curiosidade p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.curiosidade-destaque {
-    color: #ffd700;
-    font-weight: bold;
-    margin-top: 10px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-}
-
-/* Bônus extras */
-.curiosidades-extra {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.card-curiosidade.extra {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 215, 0, 0.3);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .planetas-grid {
-        grid-template-columns: 1fr;
-    }
     
-    .curiosidades-extra {
-        grid-template-columns: 1fr;
-    }
-    
-    .curiosidades-header h2 {
-        font-size: 24px;
-    }
-}
-
-/* ============ PÁGINA SERVIÇOS ============ */
-.servicos-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.servicos-header {
-    text-align: center;
-    margin-bottom: 40px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 20px;
-}
-
-.servicos-header h2 {
-    color: #ff69b4;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.servicos-header p {
-    font-size: 18px;
-}
-
-/* GRID DE SERVIÇOS */
-.servicos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-.servico-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px;
-    border: 1px solid rgba(255, 105, 180, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.servico-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
-}
-
-.servico-icon {
-    font-size: 55px;
-    margin-bottom: 20px;
-}
-
-.servico-card h3 {
-    color: #ff69b4;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.servico-card p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.servico-lista {
-    text-align: left;
-    margin: 15px 0;
-    padding-left: 20px;
-    list-style: none;
-}
-
-.servico-lista li {
-    margin: 8px 0;
-    font-size: 13px;
-    color: #ffb6d9;
-}
-
-.btn-saiba-mais {
-    background: linear-gradient(135deg, #ff69b4, #ff1493);
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 15px;
-}
-
-.btn-saiba-mais:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
-}
-
-/* SEÇÃO DA CRIADORA - COM FOTO REDONDA */
-.criadora-section {
-    margin: 50px 0;
-}
-
-.criadora-card {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    border-radius: 30px;
-    padding: 35px;
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    align-items: center;
-    border: 1px solid rgba(255, 105, 180, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.criadora-card:hover {
-    transform: translateY(-3px);
-}
-
-.foto-criadora {
-    flex-shrink: 0;
-}
-
-.foto-criadora img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #ff69b4;
-    box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, #2a1b3d, #1a0f2e);
-}
-
-.foto-criadora img:hover {
-    transform: scale(1.05);
-    border-color: #ffb6d9;
-    box-shadow: 0 0 40px rgba(255, 105, 180, 0.8);
-}
-
-.criadora-info {
-    flex: 1;
-}
-
-.criadora-info h3 {
-    color: #ff69b4;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.criadora-info h4 {
-    color: #ffb6d9;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.criadora-info p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.redes-sociais {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 105, 180, 0.2);
-    border-radius: 50%;
-    font-size: 24px;
-    text-decoration: none;
-    color: #ff69b4;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    background: #ff69b4;
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* SEÇÃO DE CONTATO */
-.servicos-contato {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 35px;
-    border-radius: 20px;
-    text-align: center;
-    margin-top: 30px;
-    border: 1px solid rgba(255, 105, 180, 0.3);
-}
-
-.servicos-contato h3 {
-    color: #ff69b4;
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-.servicos-contato p {
-    margin-bottom: 20px;
-}
-
-.contato-info {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.contato-item {
-    background: rgba(255, 105, 180, 0.15);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.contato-item:hover {
-    background: rgba(255, 105, 180, 0.3);
-    transform: translateY(-2px);
-}
-
-/* RESPONSIVIDADE PARA SERVIÇOS */
-@media (max-width: 768px) {
-    .servicos-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .criadora-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px;
-    }
-    
-    .foto-criadora img {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .redes-sociais {
-        justify-content: center;
-    }
-    
-    .contato-info {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .servicos-header h2 {
-        font-size: 24px;
-    }
-    
-    .criadora-info h3 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
     .servico-card {
         padding: 20px;
     }
     
     .servico-icon {
-        font-size: 45px;
+        font-size: 50px;
+    }
+    
+    .servico-card h3 {
+        font-size: 20px;
     }
     
     .foto-criadora img {
         width: 120px;
         height: 120px;
+    }
+    
+    .card-curiosidade {
+        padding: 20px;
+    }
+    
+    .planeta-icon {
+        font-size: 40px;
+    }
+    
+    .card-curiosidade h3 {
+        font-size: 20px;
+    }
+    
+    .personagem-icon {
+        font-size: 50px;
+    }
+    
+    .personagem-card h4 {
+        font-size: 18px;
+    }
+    
+    .historia-texto {
+        padding: 20px;
     }
 }
