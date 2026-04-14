@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPACE LUNA - História</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,9 +13,7 @@
             <div class="logo-titulo">
                 <h1>🌙 SPACE LUNA</h1>
             </div>
-            <button id="btn-tema" class="btn-tema" aria-label="Mudar tema">
-                🌞
-            </button>
+            <button id="btn-tema" class="btn-tema" aria-label="Mudar tema">🌞</button>
         </div>
         <nav>
             <a href="index.html">HOME</a>
@@ -25,31 +23,39 @@
         </nav>
     </header>
 
-    <main class="historia">
-        <h2>📖 A História de Luna</h2>
-        
-        <div class="campo-imagem">
-            <p><strong>🔹 Personagem principal Luna:</strong></p>
-            <img src="luna-personagem2.png" alt="Personagem Luna" class="personagem" onerror="this.src='https://via.placeholder.com/300x300?text=Luna'">
-            
-        </div>
+    <main>
+        <div class="historia-container">
+            <div class="historia-texto">
+                <h2>📖 A História de Luna 🌙</h2>
+                <p>Em uma noite estrelada, <strong>Luna</strong>, uma garota de 16 anos apaixonada pelo céu, encontra um antigo telescópio no sótão de sua avó. Ao olhar através dele, algo mágico acontece: ela é transportada para uma nave espacial e recebe uma missão especial da <strong>Ordem das Estrelas</strong>.</p>
+                <p>Sua jornada a leva por todos os planetas do Sistema Solar, onde ela precisa coletar Cristais de Luz e aprender sobre cada mundo para desbloquear o segredo do cometa dourado.</p>
+                <p>Ao longo do caminho, Luna faz amizade com <strong>Astro</strong>, um robô inteligente, e <strong>Cometa</strong>, uma pequena estrela cadente que a guia nas missões. Juntas, elas enfrentam desafios, resolvem enigmas e descobrem que a maior aventura é o conhecimento!</p>
+            </div>
 
-        <div class="campo-texto">
-            <p><strong>🔹 A História:</strong></p>
-            <p>
-                Luna é uma jovem estudante do ensino médio que sempre sonhou em viajar pelo espaço. 
-                Um dia, ao mexer em um antigo telescópio da avó, ela é transportada para uma dimensão 
-                onde os planetas do Sistema Solar ganham vida! Agora, Luna precisa completar missões 
-                científicas para restaurar o equilíbrio do cosmos e voltar para casa.
-            </p>
-            <p>
-                No jogo, você acompanha Luna em sua jornada, aprendendo sobre cada planeta, 
-                enfrentando desafios astronômicos e coletando estrelas do conhecimento. 
-                Uma aventura feita por meninas, para meninas!
-            </p>
-            <p>
-                <strong>🌟 Missão:</strong> Salvar o Sistema Solar da escuridão cósmica!
-            </p>
+            <div class="historia-imagem">
+                <img src="imagens/luna-astronauta.jpg" alt="Luna astronauta" onerror="this.src='https://via.placeholder.com/600x300/2a1b3d/ff69b4?text=🌙+Luna+em+missão+espacial+🚀'">
+            </div>
+
+            <div class="historia-personagens">
+                <h3>👩‍🚀 Personagens Principais</h3>
+                <div class="personagens-grid">
+                    <div class="personagem-card">
+                        <div class="personagem-icon">🌙</div>
+                        <h4>Luna</h4>
+                        <p>A protagonista curiosa e corajosa que sonha em desvendar os mistérios do universo.</p>
+                    </div>
+                    <div class="personagem-card">
+                        <div class="personagem-icon">🤖</div>
+                        <h4>Astro</h4>
+                        <p>Robô assistente cheio de conhecimento sobre astronomia e tecnologia espacial.</p>
+                    </div>
+                    <div class="personagem-card">
+                        <div class="personagem-icon">⭐</div>
+                        <h4>Cometa</h4>
+                        <p>Uma estrela cadente mágica que guia Luna em sua jornada.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -75,31 +81,4 @@
                 star.style.top = Math.random() * 100 + '%';
                 const duration = Math.random() * 3 + 2;
                 star.style.animationDuration = duration + 's';
-                star.style.animationDelay = Math.random() * 5 + 's';
-                starsContainer.appendChild(star);
-            }
-        }
-        createStars();
-
-        const btnTema = document.getElementById('btn-tema');
-        const body = document.body;
-        const temaSalvo = localStorage.getItem('temaSpaceLuna');
-        if (temaSalvo === 'claro') {
-            body.classList.add('tema-claro');
-            btnTema.textContent = '🌙';
-        } else {
-            btnTema.textContent = '🌞';
-        }
-        btnTema.addEventListener('click', () => {
-            body.classList.toggle('tema-claro');
-            if (body.classList.contains('tema-claro')) {
-                localStorage.setItem('temaSpaceLuna', 'claro');
-                btnTema.textContent = '🌙';
-            } else {
-                localStorage.setItem('temaSpaceLuna', 'escuro');
-                btnTema.textContent = '🌞';
-            }
-        });
-    </script>
-</body>
-</html>
+                star.style.animationDelay = Math.random() * 5 + '
