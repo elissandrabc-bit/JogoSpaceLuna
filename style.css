@@ -803,3 +803,105 @@ footer {
     background: #ff69b4;
     color: white;
 }
+
+/* ============ PÁGINA CURIOSIDADES ============ */
+.curiosidades-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.curiosidades-header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.curiosidades-header h2 {
+    color: #ff69b4;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.curiosidades-header p {
+    font-size: 18px;
+}
+
+/* GRID DOS PLANETAS - ORGANIZADO EM FILA/COLUNAS */
+.planetas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.card-curiosidade {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-curiosidade:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+}
+
+.planeta-icon {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.card-curiosidade h3 {
+    color: #ff69b4;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.card-curiosidade p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.curiosidade-destaque {
+    color: #ffd700;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Bônus extras */
+.curiosidades-extra {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card-curiosidade.extra {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .planetas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .curiosidades-extra {
+        grid-template-columns: 1fr;
+    }
+    
+    .curiosidades-header h2 {
+        font-size: 24px;
+    }
+}
